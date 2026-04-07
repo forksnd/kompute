@@ -276,7 +276,7 @@ class Sequence : public std::enable_shared_from_this<Sequence>
      */
     void destroy();
 
-  private:
+  protected:
     // -------------- NEVER OWNED RESOURCES
     std::shared_ptr<vk::PhysicalDevice> mPhysicalDevice = nullptr;
     std::shared_ptr<vk::Device> mDevice = nullptr;
@@ -298,6 +298,7 @@ class Sequence : public std::enable_shared_from_this<Sequence>
     bool mRecording = false;
     bool mIsRunning = false;
 
+  private:
     // Create functions
     void createCommandPool();
     void createCommandBuffer();

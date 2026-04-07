@@ -291,7 +291,7 @@ class Algorithm
 
     void destroy();
 
-  private:
+  protected:
     // -------------- NEVER OWNED RESOURCES
     std::shared_ptr<vk::Device> mDevice;
     std::vector<std::shared_ptr<Memory>> mMemObjects;
@@ -312,6 +312,7 @@ class Algorithm
     std::shared_ptr<vk::Pipeline> mPipeline;
     bool mFreePipeline = false;
 
+  private:
     // -------------- ALWAYS OWNED RESOURCES
     std::vector<uint32_t> mSpirv;
     void* mSpecializationConstantsData = nullptr;
